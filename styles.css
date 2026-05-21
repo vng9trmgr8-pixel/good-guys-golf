@@ -1364,6 +1364,8 @@ p {
 @media (max-width: 480px) {
   .hero { min-height: 100svh; }
   .hero__content { padding: 0 var(--space-sm); }
+  .hero__content h1 .script { font-size: 2.4rem; }
+  .mobile-break { display: block; }
   .hero__actions { flex-direction: column; }
   .hero__actions .btn { text-align: center; justify-content: center; }
   .features-grid { grid-template-columns: 1fr 1fr; gap: 0.5rem; }
