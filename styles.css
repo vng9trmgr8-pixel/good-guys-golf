@@ -702,6 +702,71 @@ p {
   letter-spacing: 0.01em;
 }
 
+/* Features variant — tighter spacing */
+.image-break--features {
+  min-height: auto;
+}
+
+.image-break--features .image-break__overlay {
+  padding: var(--space-xl) var(--space-lg);
+}
+
+.image-break--features .image-break__content {
+  max-width: 900px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.5rem 1rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  text-align: center;
+}
+
+.feature-item h4 {
+  color: var(--cream);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.feature-item p {
+  color: rgba(245, 240, 232, 0.6);
+  font-size: 0.8rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Darker overlay for image breaks that transition into dark sections */
 .image-break__overlay--dark {
   background: linear-gradient(
