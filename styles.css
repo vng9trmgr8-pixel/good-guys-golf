@@ -382,9 +382,9 @@ p {
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(10, 30, 10, 0.55) 0%,
-    rgba(15, 35, 15, 0.4) 40%,
-    rgba(5, 20, 5, 0.7) 100%
+    rgba(10, 30, 10, 0.35) 0%,
+    rgba(15, 35, 15, 0.25) 40%,
+    rgba(5, 20, 5, 0.5) 100%
   );
 }
 
