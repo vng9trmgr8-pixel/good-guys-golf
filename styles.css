@@ -1317,26 +1317,58 @@ p {
 .back-to-top svg { width: 18px; height: 18px; }
 
 /* ── Responsive ── */
+
+/* iPad / Tablet */
 @media (max-width: 1024px) {
   .nav__links { display: none; }
   .nav__hamburger { display: flex; }
   .nav__cta { display: none; }
   .about__grid, .register__grid, .contact__grid { grid-template-columns: 1fr; }
   .footer__grid { grid-template-columns: 1fr 1fr; }
+  .hero { min-height: 100svh; }
+  .hero__content h1 { font-size: clamp(2rem, 5vw, 3rem); }
+  .hero__content p { font-size: 0.95rem; }
+  .products__grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+  .features-grid { grid-template-columns: repeat(2, 1fr); }
+  .image-break--features .image-break__content { max-width: 95%; }
+  .image-break--features .image-break__overlay { padding: var(--space-lg) var(--space-md); }
+  .sponsors__grid { gap: var(--space-md); }
+  .sponsor-logo { height: 50px; }
 }
 
+/* Smaller tablets & large phones */
 @media (max-width: 768px) {
   .section { padding: var(--space-xl) 0; }
   .hero__stats-inner { gap: var(--space-md); }
   .hero__stat-number { font-size: 1.4rem; }
+  .hero__stat-label { font-size: 0.55rem; }
   .form__row { grid-template-columns: 1fr; }
   .footer__grid { grid-template-columns: 1fr; gap: var(--space-lg); }
-  .products__grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+  .products__grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-md); }
+  .features-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+  .feature-item { padding: 1rem 0.75rem; }
+  .feature-item h4 { font-size: 0.75rem; }
+  .feature-item p { font-size: 0.7rem; }
+  .image-break__emblem { max-width: 200px; max-height: 200px; }
+  .image-break__quote { font-size: clamp(1rem, 2.5vw, 1.5rem); }
+  .register__price { flex-direction: column; gap: var(--space-md); }
+  .register__price-item { flex-direction: column; text-align: center; gap: 0.25rem; }
+  .about__image img { border-radius: 12px; }
+  .timeline { flex-direction: column; gap: var(--space-lg); }
+  .timeline__item { text-align: center; }
+  .nav__logo img { height: 40px; }
+  .nav__logo-sub { font-size: 0.4rem; }
 }
 
+/* Phones */
 @media (max-width: 480px) {
+  .hero { min-height: 100svh; }
+  .hero__content { padding: 0 var(--space-sm); }
   .hero__actions { flex-direction: column; }
   .hero__actions .btn { text-align: center; justify-content: center; }
+  .features-grid { grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+  .products__grid { grid-template-columns: 1fr; }
+  .sponsor-logo { height: 40px; }
 }
 
 /* ── Reduced Motion ── */
