@@ -702,12 +702,19 @@ p {
   letter-spacing: 0.01em;
 }
 
-/* Features variant — tighter spacing */
+/* Features variant — grows with content */
 .image-break--features {
+  height: auto;
   min-height: auto;
 }
 
+.image-break--features > img {
+  position: absolute;
+  inset: 0;
+}
+
 .image-break--features .image-break__overlay {
+  position: relative;
   padding: var(--space-xl) var(--space-lg);
 }
 
