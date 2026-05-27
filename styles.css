@@ -801,64 +801,174 @@ p {
   z-index: 2;
 }
 
-/* ── Timeline ── */
-.timeline {
+/* ── Infographic ── */
+.infographic__stats {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: var(--space-md);
-}
-
-.timeline__card {
-  flex: 0 1 calc(20% - var(--space-md));
-  min-width: 200px;
-}
-
-.timeline__card {
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-xl);
   padding: var(--space-lg);
-  border: 1px solid var(--border);
-  border-radius: 8px;
+  background: var(--green-deep);
+  border-radius: 12px;
+}
+
+.infographic__stat {
+  text-align: center;
+  min-width: 100px;
+}
+
+.infographic__stat-number {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1.1;
+}
+
+.infographic__stat-label {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 232, 0.6);
+  margin-top: 0.25rem;
+  display: block;
+}
+
+/* ── Horizontal Timeline ── */
+.htl-wrapper {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--green-mid) transparent;
+  padding-bottom: var(--space-md);
+}
+
+.htl-wrapper::-webkit-scrollbar { height: 6px; }
+.htl-wrapper::-webkit-scrollbar-track { background: transparent; }
+.htl-wrapper::-webkit-scrollbar-thumb { background: var(--green-mid); border-radius: 3px; }
+
+.htl-track {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  min-width: max-content;
+  position: relative;
+  padding: var(--space-md) 0;
+}
+
+/* Connecting line through the timeline */
+.htl-track::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--border);
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+/* Era markers */
+.htl-era {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border-radius: 100px;
+  z-index: 1;
+  flex-shrink: 0;
+  margin: 0 0.5rem;
+  align-self: center;
+}
+
+.htl-era--green { background: var(--green-deep); }
+.htl-era--gold { background: var(--gold); }
+.htl-era--dark { background: var(--text); }
+
+.htl-era__label {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--white);
+  white-space: nowrap;
+}
+
+.htl-era--gold .htl-era__label { color: var(--green-deep); }
+
+/* Timeline cards */
+.htl-card {
+  flex-shrink: 0;
+  width: 220px;
+  padding: var(--space-md);
+  margin: 0 0.4rem;
   background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  z-index: 1;
   transition: all var(--duration) var(--ease);
 }
 
-.timeline__card:hover {
+.htl-card:hover {
   border-color: var(--green-mid);
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(26, 46, 26, 0.08);
+  box-shadow: 0 10px 30px rgba(26, 46, 26, 0.1);
 }
 
-.timeline__year {
+.htl-card--highlight {
+  background: var(--green-deep);
+  border-color: var(--gold);
+  border-width: 2px;
+}
+
+.htl-card__year {
   font-family: var(--font-script);
-  font-size: 3rem;
-  font-weight: 400;
+  font-size: 2rem;
   color: var(--green-mid);
   line-height: 1;
-  margin-bottom: var(--space-sm);
+  margin-bottom: 0.25rem;
 }
 
-.timeline__card h3 {
-  font-family: var(--font-body);
-  font-size: 0.85rem;
-  font-weight: 600;
+.htl-card--highlight .htl-card__year { color: var(--gold); }
+
+.htl-card__title {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 700;
   letter-spacing: 0.03em;
-  margin-bottom: var(--space-xs);
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 0.4rem;
 }
 
-.timeline__detail {
+.htl-card--highlight .htl-card__title { color: var(--cream); }
+
+.htl-card__body {
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.htl-card--highlight .htl-card__body { color: rgba(245, 240, 232, 0.7); }
+
+.htl-hint {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 0.8rem;
+  justify-content: center;
+  gap: 0.4rem;
+  font-size: 0.7rem;
   color: var(--text-muted);
-  margin-bottom: 4px;
-}
-
-.timeline__detail svg {
-  flex-shrink: 0;
-  width: 14px;
-  height: 14px;
-  color: var(--green-muted);
+  margin-top: var(--space-sm);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
 /* ── Products ── */
