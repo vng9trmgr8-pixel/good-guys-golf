@@ -971,6 +971,93 @@ p {
   font-weight: 600;
 }
 
+/* ── Awards Tables ── */
+.awards-section {
+  margin-top: var(--space-xl);
+}
+
+.awards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+}
+
+.awards-table {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: var(--space-md);
+}
+
+.awards-table__title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: var(--space-sm);
+}
+
+.awards-table__scroll {
+  max-height: 400px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--green-mid) transparent;
+}
+
+.awards-table__scroll::-webkit-scrollbar { width: 4px; }
+.awards-table__scroll::-webkit-scrollbar-thumb { background: var(--green-mid); border-radius: 2px; }
+
+.awards-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+.awards-table th {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-align: left;
+  padding: 0.4rem 0.6rem;
+  border-bottom: 2px solid var(--border);
+  position: sticky;
+  top: 0;
+  background: var(--white);
+}
+
+.awards-table td {
+  padding: 0.45rem 0.6rem;
+  border-bottom: 1px solid var(--border-light, rgba(0,0,0,0.05));
+  color: var(--text);
+}
+
+.awards-table td:first-child {
+  font-weight: 600;
+  color: var(--green-mid);
+  white-space: nowrap;
+}
+
+.awards-table tbody tr:hover {
+  background: rgba(26, 46, 26, 0.03);
+}
+
+.awards-table__highlight {
+  background: rgba(201, 168, 76, 0.1) !important;
+}
+
+.awards-table__highlight td {
+  font-weight: 600 !important;
+  color: var(--gold-dark) !important;
+}
+
 /* ── Products ── */
 .products__grid {
   display: grid;
@@ -1462,6 +1549,7 @@ p {
   .form__row { grid-template-columns: 1fr; }
   .footer__grid { grid-template-columns: 1fr; gap: var(--space-lg); }
   .products__grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-md); }
+  .awards-grid { grid-template-columns: 1fr; }
   .features-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
   .feature-item { padding: 1rem 0.75rem; }
   .feature-item h4 { font-size: 0.75rem; }
