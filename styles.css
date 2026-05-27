@@ -980,6 +980,7 @@ p {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-md);
+  align-items: start;
 }
 
 .awards-table {
@@ -987,6 +988,10 @@ p {
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: 0.75rem;
+}
+
+.awards-table--full .awards-table__scroll {
+  max-height: none;
 }
 
 .awards-table__title {
